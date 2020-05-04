@@ -8,6 +8,7 @@ var box1, pig1,pig3;
 var backgroundImg,platform;
 var bird, slingshot;
 var bg = "sprites/bg.png"
+var score = 0
 
 var gameState = "onSling";
 
@@ -52,17 +53,21 @@ function draw(){
 
 background(backgroundImg);
    
+text ("score:"+score,width-300,50)
+
     Engine.update(engine);
     //strokeWeight(4);
     box1.display();
     box2.display();
     ground.display();
     pig1.display();
+    pig1.score();
     log1.display();
 
     box3.display();
     box4.display();
     pig3.display();
+    pig3.score();
     log3.display();
 
     box5.display();
@@ -108,5 +113,5 @@ async function getBgimg(){
         bg = "sprites/bg.png"
     }
     backgroundImg = loadImage(bg);
-    console.log (backgroungImg)
+    console.log (backgroundImg)
 } 
