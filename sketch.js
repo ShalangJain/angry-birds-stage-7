@@ -13,8 +13,7 @@ var score = 0
 var gameState = "onSling";
 
 function preload() {
-    getBgimg();
-
+   backgroundImg=loadImage(bg)
  
 }
 
@@ -98,20 +97,4 @@ function keyPressed(){
     }
 }
 
-async function getBgimg(){
-  
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
-    var responsejson = await response.json()
-    console.log (responsejson);
-    var dateTime = responsejson.datetime;
-    var hr = dateTime.slice(11,13)
-    if (hr >= 18 && hr <=6 ){
-        bg = "bg2.jpg"
-        
-    }
-    else {
-        bg = "bg.png"
-    }
-    backgroundImg = loadImage(bg);
-    console.log (backgroundImg)
-} 
+
